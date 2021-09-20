@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calculatrice';
+  resultat = '';
+
+supp () {
+  this.resultat = '';
+}
+
+saisie (input:string) {
+  if(!isNaN(parseFloat(this.resultat[this.resultat.length-1])) || !isNaN(parseFloat(input)) )
+          this.resultat = this.resultat + input ;
+}
+
+egal () {
+  this.resultat = eval(this.resultat);
+}
 }
